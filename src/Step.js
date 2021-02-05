@@ -152,7 +152,7 @@ export default class Step extends Component {
 
 Step.defaultProps = {
   activeBorder: '3px solid red',
-  activeColor: '#5096FF',
+  activeColor: 'red',
   activeTitleColor: '#000',
   barStyle: 'solid',
   borderStyle: 'solid',
