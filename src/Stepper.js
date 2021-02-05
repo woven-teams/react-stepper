@@ -32,45 +32,45 @@ function Stepper({
         { steps.map((step, index) => (
           <Step
             key={index}
-            width={100 / steps.length}
-            title={step.title}
-            icon={step.icon}
-            href={step.href}
-            onClick={step.onClick}
             active={!(disabledSteps || []).includes(index) && index === activeStep}
-            completed={!(disabledSteps || []).includes(index) && index < activeStep}
-            first={index === 0}
-            isLast={index === steps.length - 1}
-            index={index}
+            activeBorderColor={activeBorderColor}
+            activeBorderStyle={activeBorderStyle}
             activeColor={activeColor}
-            completeColor={completeColor}
-            defaultColor={defaultColor}
-            circleFontColor={circleFontColor}
-            activeTitleColor={activeTitleColor}
-            completeTitleColor={completeTitleColor}
-            defaultTitleColor={defaultTitleColor}
-            size={size}
-            circleFontSize={circleFontSize}
-            titleFontSize={titleFontSize}
-            circleTop={circleTop}
-            titleTop={titleTop}
-            defaultOpacity={defaultOpacity}
-            completeOpacity={completeOpacity}
             activeOpacity={activeOpacity}
-            defaultTitleOpacity={defaultTitleOpacity}
-            completeTitleOpacity={completeTitleOpacity}
+            activeTitleColor={activeTitleColor}
             activeTitleOpacity={activeTitleOpacity}
             barStyle={barStyle}
-            defaultBorderColor={defaultBorderColor}
+            circleFontColor={circleFontColor}
+            circleFontSize={circleFontSize}
+            circleTop={circleTop}
+            completeBarColor={completeBarColor}
             completeBorderColor={completeBorderColor}
-            activeBorderColor={activeBorderColor}
+            completeBorderStyle={completeBorderStyle}
+            completeColor={completeColor}
+            completed={!(disabledSteps || []).includes(index) && index < activeStep}
+            completeOpacity={completeOpacity}
+            completeTitleColor={completeTitleColor}
+            completeTitleOpacity={completeTitleOpacity}
+            defaultBarColor={defaultBarColor}
+            defaultBorderColor={defaultBorderColor}
             defaultBorderStyle={defaultBorderStyle}
             defaultBorderWidth={defaultBorderWidth}
-            completeBorderStyle={completeBorderStyle}
-            activeBorderStyle={activeBorderStyle}
-            defaultBarColor={defaultBarColor}
-            completeBarColor={completeBarColor}
+            defaultColor={defaultColor}
+            defaultOpacity={defaultOpacity}
+            defaultTitleColor={defaultTitleColor}
+            defaultTitleOpacity={defaultTitleOpacity}
+            first={index === 0}
+            href={step.href}
+            icon={step.icon}
+            index={index}
+            isLast={index === steps.length - 1}
             lineMarginOffset={lineMarginOffset}
+            onClick={step.onClick}
+            size={size}
+            title={step.title}
+            titleFontSize={titleFontSize}
+            titleTop={titleTop}
+            width={100 / steps.length}
           />
         )) }
       </div>
@@ -83,37 +83,37 @@ Stepper.defaultProps = {
 };
 
 Stepper.propTypes = {
-  activeStep: PropTypes.number,
-  steps: PropTypes.array,
+  activeBorderColor: PropTypes.string,
+  activeBorderStyle: PropTypes.string,
   activeColor: PropTypes.string,
-  completeColor: PropTypes.string,
-  defaultColor: PropTypes.string,
-  activeTitleColor: PropTypes.string,
-  completeTitleColor: PropTypes.string,
-  defaultTitleColor: PropTypes.string,
-  circleFontColor: PropTypes.string,
-  size: PropTypes.number,
-  circleFontSize: PropTypes.number,
-  titleFontSize: PropTypes.number,
-  circleTop: PropTypes.number,
-  titleTop: PropTypes.number,
-  defaultOpacity: PropTypes.string,
-  completeOpacity: PropTypes.string,
   activeOpacity: PropTypes.string,
-  defaultTitleOpacity: PropTypes.string,
-  completeTitleOpacity: PropTypes.string,
+  activeStep: PropTypes.number,
+  activeTitleColor: PropTypes.string,
   activeTitleOpacity: PropTypes.string,
   barStyle: PropTypes.string,
-  defaultBarColor: PropTypes.string,
+  circleFontColor: PropTypes.string,
+  circleFontSize: PropTypes.number,
+  circleTop: PropTypes.number,
   completeBarColor: PropTypes.string,
-  defaultBorderColor: PropTypes.string,
   completeBorderColor: PropTypes.string,
-  activeBorderColor: PropTypes.string,
-  defaultBorderStyle: PropTypes.string,
   completeBorderStyle: PropTypes.string,
-  activeBorderStyle: PropTypes.string,
+  completeColor: PropTypes.string,
+  completeOpacity: PropTypes.string,
+  completeTitleColor: PropTypes.string,
+  completeTitleOpacity: PropTypes.string,
+  defaultBarColor: PropTypes.string,
+  defaultBorderColor: PropTypes.string,
+  defaultBorderStyle: PropTypes.string,
+  defaultBorderWidth: PropTypes.number,
+  defaultColor: PropTypes.string,
+  defaultOpacity: PropTypes.string,
+  defaultTitleColor: PropTypes.string,
+  defaultTitleOpacity: PropTypes.string,
   lineMarginOffset: PropTypes.number,
-  defaultBorderWidth: PropTypes.number
+  size: PropTypes.number,
+  steps: PropTypes.array,
+  titleFontSize: PropTypes.number,
+  titleTop: PropTypes.number,
 };
 
 export default Stepper;
