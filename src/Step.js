@@ -43,6 +43,7 @@ export default class Step extends Component {
       },
       activeCircle: {
         backgroundColor: activeColor,
+        border: activeBorder,
         borderColor: activeBorderColor,
         borderStyle: activeBorderStyle,
         borderWidth: (activeBorderColor ? defaultBorderWidth : 0),
@@ -150,6 +151,7 @@ export default class Step extends Component {
 }
 
 Step.defaultProps = {
+  activeBorder: '3px solid red',
   activeColor: '#5096FF',
   activeTitleColor: '#000',
   barStyle: 'solid',
@@ -171,6 +173,7 @@ Step.defaultProps = {
 
 Step.propTypes = {
   active: PropTypes.bool,
+  activeBorder: PropTypes.string,
   activeBorderColor: PropTypes.string,
   activeBorderStyle: PropTypes.string,
   activeColor: PropTypes.string,

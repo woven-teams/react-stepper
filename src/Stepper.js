@@ -17,6 +17,7 @@ const styles = {
 };
 
 function Stepper({
+  activeBorder,
   activeStep, steps, disabledSteps,
   activeColor, completeColor, defaultColor, circleFontColor,
   activeTitleColor, completeTitleColor, defaultTitleColor,
@@ -33,6 +34,7 @@ function Stepper({
           <Step
             key={index}
             active={!(disabledSteps || []).includes(index) && index === activeStep}
+            activeBorder={activeBorder}
             activeBorderColor={activeBorderColor}
             activeBorderStyle={activeBorderStyle}
             activeColor={activeColor}
@@ -83,6 +85,7 @@ Stepper.defaultProps = {
 };
 
 Stepper.propTypes = {
+  activeBorder: PropTypes.string,
   activeBorderColor: PropTypes.string,
   activeBorderStyle: PropTypes.string,
   activeColor: PropTypes.string,
