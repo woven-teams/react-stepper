@@ -9,7 +9,7 @@ export default class Step extends Component {
 
   getStyles() {
     const {
-      activeColor, completeColor, defaultColor, circleFontColor,
+      activeBorder, activeColor, completeColor, defaultColor, circleFontColor,
       activeTitleColor, completeTitleColor, defaultTitleColor,
       size, circleFontSize, titleFontSize,
       circleTop, titleTop, width, completeOpacity, activeOpacity, defaultOpacity,
