@@ -55,7 +55,6 @@ function Stepper({
             defaultBorderColor={defaultBorderColor}
             defaultBorderStyle={defaultBorderStyle}
             defaultBorderWidth={defaultBorderWidth}
-            defaultCircleBorder={defaultCircleBorder}
             defaultColor={defaultColor}
             defaultOpacity={defaultOpacity}
             defaultTitleColor={defaultTitleColor}
@@ -106,7 +105,6 @@ Stepper.propTypes = {
   defaultBorderColor: PropTypes.string,
   defaultBorderStyle: PropTypes.string,
   defaultBorderWidth: PropTypes.number,
-  defaultCircleBorder: PropTypes.string,
   defaultColor: PropTypes.string,
   defaultOpacity: PropTypes.string,
   defaultTitleColor: PropTypes.string,
