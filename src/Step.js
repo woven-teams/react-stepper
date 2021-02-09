@@ -106,7 +106,7 @@ export default class Step extends Component {
   }
 
   render() {
-    const { title, icon, index, active, completed, first, isLast, href, onClick } = this.props;
+    const { active, completed, first, href, icon, index, isLast, message, onClick, title, } = this.props;
 
     const styles = this.getStyles();
     const circleStyle = Object.assign(
@@ -132,20 +132,23 @@ export default class Step extends Component {
     const stepContent = icon ? <img src={icon} alt={index + 1} /> : index + 1;
 
     return (
-      <div style={ styles.step }>
-        <div style={ circleStyle }>
-        {active || completed ? (
-          <a href={href} onClick={onClick} style={ styles.index }>{ stepContent }</a>
-        ) : (
-          <span style={ styles.index }>{ stepContent }</span>
-        )}
+      <div>
+        <div>{message}</div>
+        <div style={ styles.step }>
+          <div style={ circleStyle }>
+          {active || completed ? (
+            <a href={href} onClick={onClick} style={ styles.index }>{ stepContent }</a>
+          ) : (
+            <span style={ styles.index }>{ stepContent }</span>
+          )}
+          </div>
+          {active || completed ? (
+            <a href={href} onClick={onClick} style={ titleStyle }>{ title }</a>
+          ) : (
+            <div style={ titleStyle }>{ title }</div>
+          )}
+          { !first && <div style={ barStyleSet }></div> }
         </div>
-        {active || completed ? (
-          <a href={href} onClick={onClick} style={ titleStyle }>{ title }</a>
-        ) : (
-          <div style={ titleStyle }>{ title }</div>
-        )}
-        { !first && <div style={ barStyleSet }></div> }
       </div>
     );
   }
