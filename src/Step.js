@@ -132,23 +132,20 @@ export default class Step extends Component {
     const stepContent = icon ? <img src={icon} alt={index + 1} /> : index + 1;
 
     return (
-      <div>
-        <div>{message}</div>
-        <div style={ styles.step }>
-          <div style={ circleStyle }>
-          {active || completed ? (
-            <a href={href} onClick={onClick} style={ styles.index }>{ stepContent }</a>
-          ) : (
-            <span style={ styles.index }>{ stepContent }</span>
-          )}
-          </div>
-          {active || completed ? (
-            <a href={href} onClick={onClick} style={ titleStyle }>{ title }</a>
-          ) : (
-            <div style={ titleStyle }>{ title }</div>
-          )}
-          { !first && <div style={ barStyleSet }></div> }
+      <div style={ styles.step }>
+        <div style={ circleStyle }>
+        {active || completed ? (
+          <a href={href} onClick={onClick} style={ styles.index }>{ stepContent }</a>
+        ) : (
+          <span style={ styles.index }>{ stepContent }</span>
+        )}
         </div>
+        {active || completed ? (
+          <a href={href} onClick={onClick} style={ titleStyle }>{ title }</a>
+        ) : (
+          <div style={ titleStyle }>{ title }</div>
+        )}
+        { !first && <div style={ barStyleSet }></div> }
       </div>
     );
   }
