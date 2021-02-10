@@ -72,6 +72,7 @@ function Stepper({
             title={step.title}
             titleFontSize={titleFontSize}
             titleTop={titleTop}
+            tooltip={step.tooltip}
             width={100 / steps.length}
           />
         )) }

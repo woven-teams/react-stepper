@@ -108,7 +108,10 @@ export default class Step extends Component {
   }
 
   render() {
-    const { active, completed, completedTooltip, defaultTooltip, first, href, icon, index, isLast, message, onClick, title, } = this.props;
+    const { active, completed, completedTooltip, defaultTooltip, first, href, icon, index, isLast, message, onClick, title, tooltip } = this.props;
+    {/*
+      defaultTooltip and completedTool can be used when tooltip needs to be different based on status. Change data-tip to `completed ? completedTooltip : defaultTooltip`
+    */}
 
     const styles = this.getStyles();
     const circleStyle = Object.assign(
@@ -135,7 +138,7 @@ export default class Step extends Component {
 
     return (
       <div style={ styles.step }>
-        <div style={ circleStyle } data-tip={completed ? completedTooltip : defaultTooltip}>
+        <div style={ circleStyle } data-tip={tooltip}>
         {active || completed ? (
           <a href={href} onClick={onClick} style={ styles.index }>{ stepContent }</a>
         ) : (
