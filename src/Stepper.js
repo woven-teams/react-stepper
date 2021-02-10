@@ -49,6 +49,7 @@ function Stepper({
             completeOpacity={completeOpacity}
             completeTitleColor={completeTitleColor}
             completeTitleOpacity={completeTitleOpacity}
+            completedTooltip={step.completedTooltip}
             defaultBarColor={defaultBarColor}
             defaultBorder={defaultBorder}
             defaultBorderColor={defaultBorderColor}
@@ -58,6 +59,7 @@ function Stepper({
             defaultOpacity={defaultOpacity}
             defaultTitleColor={defaultTitleColor}
             defaultTitleOpacity={defaultTitleOpacity}
+            defaultTooltip={step.defaultTooltip}
             first={index === 0}
             href={step.href}
             icon={step.icon}
@@ -65,7 +67,6 @@ function Stepper({
             isLast={index === steps.length - 1}
             lineMarginOffset={lineMarginOffset}
             message={step.message}
-            mouseover={step.mouseover}
             onClick={step.onClick}
             size={size}
             title={step.title}

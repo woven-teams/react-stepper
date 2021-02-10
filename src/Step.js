@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 
+import ReactTooltip from 'react-tooltip';
+
 export default class Step extends Component {
   constructor() {
     super();
@@ -106,7 +108,7 @@ export default class Step extends Component {
   }
 
   render() {
-    const { active, completed, first, href, icon, index, isLast, message, mouseover, onClick, title, } = this.props;
+    const { active, completed, completedTooltip, defaultTooltip, first, href, icon, index, isLast, message, onClick, title, } = this.props;
 
     const styles = this.getStyles();
     const circleStyle = Object.assign(
@@ -133,7 +135,7 @@ export default class Step extends Component {
 
     return (
       <div style={ styles.step }>
-        <div style={ circleStyle }>
+        <div style={ circleStyle } data-tip={completed ? completedTooltip : defaultTooltip}>
         {active || completed ? (
           <a href={href} onClick={onClick} style={ styles.index }>{ stepContent }</a>
         ) : (
@@ -146,6 +148,7 @@ export default class Step extends Component {
           <div style={ titleStyle }>{ title }</div>
         )}
         { !first && <div style={ barStyleSet }></div> }
+        <ReactTooltip backgroundColor='#3a3b3c' />
       </div>
     );
   }
