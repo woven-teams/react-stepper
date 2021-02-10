@@ -65,6 +65,7 @@ function Stepper({
             isLast={index === steps.length - 1}
             lineMarginOffset={lineMarginOffset}
             message={step.message}
+            mouseover={step.mouseover}
             onClick={step.onClick}
             size={size}
             title={step.title}

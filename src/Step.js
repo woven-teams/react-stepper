@@ -106,7 +106,7 @@ export default class Step extends Component {
   }
 
   render() {
-    const { active, completed, first, href, icon, index, isLast, message, onClick, title, } = this.props;
+    const { active, completed, first, href, icon, index, isLast, message, mouseover, onClick, title, } = this.props;
 
     const styles = this.getStyles();
     const circleStyle = Object.assign(
